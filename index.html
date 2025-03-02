@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国大学英语四级考试(CET4)成绩报告单 - 编辑与预览</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 引入 html2canvas 和 jspdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="editor-preview-container">
+        <!-- 编辑区 -->
+        <div class="editor">
+
+            <div class="editor-row exam-type-row">
+                <div class="editor-item">
+                    <label>选择考试类型：</label>
+
+
+
+
+                    <div class="exam-type-options">
+                        <input type="radio" id="cet4" name="exam-type" value="CET4" checked>
+                        <label for="cet4">四级（CET4）</label>
+                        <input type="radio" id="cet6" name="exam-type" value="CET6">
+                        <label for="cet6">六级（CET6）</label>
+                    </div>
+                </div>
+            </div>
+            <div class="editor-row">
+                <div class="editor-item">
+                    <label for="name">姓名：</label>
+                    <input type="text" id="name" placeholder="请输入姓名">
+                </div>
+                <div class="editor-item">
+                    <label for="id-number">证件号码：</label>
+                    <input type="text" id="id-number" placeholder="请输入证件号码">
+                </div>
+
+
+                <div class="editor-item">
+                    <label for="school">学校：</label>
+                    <input type="text" id="school" placeholder="请输入学校名称">
+                </div>
+
+
+
+
+            </div>
+            <div class="editor-row">
+                <!-- 添加照片上传功能 -->
+                <div class="editor-item">
+                    <label for="photo">照片：</label>
+                    <input type="file" id="photo" accept="image/*">
+                </div>
+                <div class="editor-item">
+                    <label for="written-exam-number">笔试准考证号：</label>
+                    <input type="text" id="written-exam-number" placeholder="请输入笔试准考证号">
+                </div>
+                <!-- 删除以下部分 -->
+                <!-- <div class="editor-item">
+                    <label for="total-score">笔试总分：</label>
+                    <input type="text" id="total-score" placeholder="请输入笔试总分">
+                </div> -->
+
+
+                <div class="editor-item">
+                    <label for="listening-score">听力成绩：</label>
+                    <input type="text" id="listening-score" placeholder="请输入听力成绩">
+                </div>
+                
+            </div>
+            <div class="editor-row">
+                <div class="editor-item">
+                    <label for="reading-score">阅读成绩：</label>
+                    <input type="text" id="reading-score" placeholder="请输入阅读成绩">
+                </div>
+
+
+                <div class="editor-item">
+                    <label for="writing-translation-score">写作和翻译成绩：</label>
+                    <input type="text" id="writing-translation-score" placeholder="请输入写作和翻译成绩">
+                </div>
+                <div class="editor-item">
+                    <label for="written-exam-date">笔试考试时间：</label>
+                    <input type="text" id="written-exam-date" placeholder="请输入笔试考试时间">
+                </div>
+            </div>
+            <div class="editor-row">
+                <div class="editor-item">
+                    <label for="oral-exam-number">口试准考证号：</label>
+                    <input type="text" id="oral-exam-number" placeholder="请输入口试准考证号">
+                </div>
+                <div class="editor-item">
+                    <label for="oral-exam-grade">口试等级：</label>
+                    <input type="text" id="oral-exam-grade" placeholder="请输入口试等级">
+                </div>
+
+
+                <div class="editor-item">
+                    <label for="oral-exam-date">口试考试时间：</label>
+                    <input type="text" id="oral-exam-date" placeholder="请输入口试考试时间">
+                </div>
+            </div>
+            <div class="editor-row">
+                <div class="editor-item">
+                    <label for="report-number">成绩报告单编号：</label>
+                    <input type="text" id="report-number" placeholder="请输入成绩报告单编号">
+                </div>
+                <div class="editor-item">
+                    <label>选择导出格式：</label>
+
+                    <select id="export-format" title="export-format">
+                        <option value="image">图片</option>
+                        <option value="pdf">PDF</option>
+                    </select>
+                    <button id="export-button">导出</button>
+                </div>
+            </div>
+        </div>
+        <!-- 预览区 -->
+        <div class="preview" id="preview-area">
+            <div id="preview-content" class="max-w-2xl mx-auto p-6 bg-white">
+                <!-- Title -->
+                <h1 id="preview-title" class="text-center text-2xl text-blue-500 font-medium mb-8">全国大学英语四级考试(CET4)成绩报告单
+                </h1>
+
+                <!-- Personal Information Section -->
+                <div class="flex justify-between mb-6 items-start">
+                    <div class="flex flex-col justify-between h-36">
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">姓　　名：</span>
+                            <span id="preview-name" class="inline-block w-32 h-6">钟离昧</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">证件号码：</span>
+                            <span id="preview-id-number" class="inline-block">123456789012345678</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">学　　校：</span>
+                            <span id="preview-school" class="inline-block w-48 h-6">清华大学</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo Placeholder -->
+                    <div id="preview-photo" class="w-28 h-36 bg-blue-100 border border-gray-300">
+                        <!-- Placeholder for photo -->
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-b border-dotted border-gray-400 my-4"></div>
+
+                <!-- Written Test Scores -->
+                <div class="mb-6">
+                    <div class="bg-blue-100 py-2 text-center mb-4">
+                        <h2 class="text-lg">笔试成绩</h2>
+                    </div>
+
+                    <div class="space-y-4 mt-10">
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">准考证号：</span>
+                            <span id="preview-written-exam-number" class="inline-block w-48 h-6">2024123456</span>
+                        </div>
+
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">总　　分：</span>
+                            <span id="preview-total-score" class="text-red-500 font-bold">425</span>
+                        </div>
+
+                        <div class="score-table ml-100">
+                            <div class="flex items-center ptb-8 ml-70">
+                                <span class="inline-block w-24  pr-4">听　　　力：</span>
+                                <span id="preview-listening-score" class="text-blue-600 font-bold">121</span>
+                            </div>
+
+                            <div class="flex items-center ptb-8 ml-70">
+                                <span class="inline-block w-24  pr-4">阅　　　读：</span>
+                                <span id="preview-reading-score" class="text-blue-600 font-bold">160</span>
+                            </div>
+                            <div class="flex items-center ptb-8 ml-70">
+                                <span class="inline-block w-24  pr-4">写作和翻译：</span>
+                                <span id="preview-writing-translation-score" class="text-blue-600 font-bold">144</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">考试时间：</span>
+                            <span id="preview-written-exam-date">2024年12月</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oral Test Scores -->
+                <div class="mb-6">
+                    <div class="bg-blue-100 py-2 text-center mb-4">
+                        <h2 class="text-lg">口试成绩</h2>
+                    </div>
+
+                    <div class="space-y-4 mt-10">
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">准考证号：</span>
+                            <span id="preview-oral-exam-number">--</span>
+                        </div>
+
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">等　　级：</span>
+                            <span id="preview-oral-exam-grade">--</span>
+                        </div>
+
+                        <div class="flex items-center">
+                            <span class="inline-block w-24  pr-4">考试时间：</span>
+                            <span id="preview-oral-exam-date">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-b border-dotted border-gray-400 my-4"></div>
+
+                <!-- Report Number -->
+                <div class="flex items-center">
+                    <span class="inline-block w-36  pr-4">成绩报告单编号：</span>
+                    <span id="preview-report-number" class="inline-block w-48 h-6">202412345678</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

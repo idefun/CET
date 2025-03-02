@@ -1,0 +1,446 @@
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-6 {
+    padding: 6px;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-blue-500 {
+    color: #3083C7;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.space-y-4>*+* {
+    margin-top: 1rem;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.w-24 {
+    width: 6rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.pr-4 {
+    padding-right: 0px;
+}
+
+.w-32 {
+    width: 8rem;
+}
+
+.h-6 {
+    height: 1.5rem;
+}
+
+.w-48 {
+    width: 12rem;
+}
+
+.w-28 {
+    width: 7rem;
+}
+
+.h-36 {
+    height: 9rem;
+}
+
+.bg-blue-100 {
+    background-color: #D0E0EE;
+}
+
+.border {
+    border-width: 1px;
+}
+
+.border-gray-300 {
+    border-color: #d1d5db;
+}
+
+.border-b {
+    border-bottom-width: 1px;
+}
+
+.border-dotted {
+    border-style: dotted;
+}
+
+.border-gray-400 {
+    border-color: #9ca3af;
+}
+
+.my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.py-2 {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-red-500 {
+    color: #ef4444;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.ml-24 {
+    margin-left: 6rem;
+}
+
+.pl-4 {
+    padding-left: 4px;
+}
+
+.space-y-2>*+* {
+    margin-top: 0.5rem;
+}
+
+.text-blue-600 {
+    color: #19407A;
+}
+
+.w-36 {
+    width: 9rem;
+}
+
+/* 设置 h1 标题字体为微软雅黑 */
+html {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 让姓名、证件号、学校与照片顶部对齐 */
+.items-start {
+    align-items: start;
+}
+
+/* 确保个人信息竖直排列 */
+.flex-col {
+    flex-direction: column;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 4px;
+    margin-block-end: 4px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.ml-24.pl-4.space-y-2 {
+    width: fit-content;
+    /* 宽度自适应内容 */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* 子元素拉伸以填充宽度 */
+}
+
+
+/* 设置科目描述（听力、阅读等）的整体样式 */
+.ml-24.pl-4.space-y-2 .flex .inline-block:nth-child(1) {
+    display: inline-flex;
+    justify-content: flex-end;
+    min-width: 100px;
+    /* 可根据实际情况调整最小宽度 */
+    box-sizing: border-box;
+}
+
+/* 设置每个文字的样式 */
+.ml-24.pl-4.space-y-2 .flex .inline-block:nth-child(1) span {
+    display: inline-block;
+    width: 1.5em;
+    /* 每个文字的宽度，可根据实际情况调整 */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 确保冒号单独占据空间并对齐 */
+.ml-24.pl-4.space-y-2 .flex .inline-block:nth-child(1) span:last-child {
+    width: 1em;
+    text-align: left;
+}
+
+.ptb-8 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.ml-70 {
+    margin-left: 70px;
+}
+
+
+.editor-preview-container {
+    display: flex;
+    height: 100vh;
+}
+
+.editor {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.editor-row {
+    display: flex;
+    gap: 15px;
+}
+
+.editor-item {
+    flex: 1;
+}
+
+.editor label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.editor input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.editor input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.preview {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#preview-photo {
+    background-size: cover;
+    background-position: center;
+}
+
+/* 以下原样式保持不变 */
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-blue-500 {
+    color: #3988C9
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.h-36 {
+    height: 9rem;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.w-24 {
+    width: 6rem;
+}
+
+.pr-4 {
+    padding-right: 0px;
+}
+
+.w-32 {
+    width: 8rem;
+}
+
+.w-48 {
+    width: 12rem;
+}
+
+.bg-blue-100 {
+    background-color: #dbeafe;
+}
+
+.border {
+    border-width: 1px;
+}
+
+.border-gray-300 {
+    border-color: #d1d5db;
+}
+
+.border-b {
+    border-bottom-width: 1px;
+}
+
+.border-dotted {
+    border-style: dotted;
+}
+
+.border-gray-400 {
+    border-color: #9ca3af;
+}
+
+.my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.space-y-4> :not([hidden])~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+
+
+.text-red-500 {
+    color: #ef4444;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.score-table {
+    border-collapse: collapse;
+    margin-left: 24px;
+}
+
+.score-table td {
+    padding: 0 2px;
+    text-align: center;
+    width: 2em;
+}
+
+.score-table td:last-child {
+    width: auto;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.score-table tr {
+    padding: 4px 0;
+    display: block;
+}
+
+
