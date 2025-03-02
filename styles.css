@@ -1,3 +1,21 @@
+/* 全局样式 */
+html {
+    font-family: "Microsoft YaHei", sans-serif;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 现有样式保持不变 */
 .max-w-2xl {
     max-width: 42rem;
 }
@@ -194,7 +212,6 @@ h2 {
     /* 子元素拉伸以填充宽度 */
 }
 
-
 /* 设置科目描述（听力、阅读等）的整体样式 */
 .ml-24.pl-4.space-y-2 .flex .inline-block:nth-child(1) {
     display: inline-flex;
@@ -227,7 +244,6 @@ h2 {
 .ml-70 {
     margin-left: 70px;
 }
-
 
 .editor-preview-container {
     display: flex;
@@ -286,6 +302,46 @@ h2 {
 #preview-photo {
     background-size: cover;
     background-position: center;
+}
+
+/* 媒体查询：手机屏幕（最大宽度 767px） */
+@media (max-width: 767px) {
+    .editor-preview-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .editor,
+    .preview {
+        flex: none;
+        width: 100%;
+    }
+
+    .editor-row {
+        flex-direction: column;
+    }
+
+    .text-2xl {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .text-lg {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    .ml-24 {
+        margin-left: 2rem;
+    }
+
+    .w-24,
+    .w-32,
+    .w-48,
+    .w-28,
+    .w-36 {
+        width: auto;
+    }
 }
 
 /* 以下原样式保持不变 */
